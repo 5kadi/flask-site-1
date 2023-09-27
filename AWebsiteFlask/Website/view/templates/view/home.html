@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Main Page</title>
+        <link type="text/css" href="{{url_for('view.static', filename='css/styles.css')}}" rel="stylesheet"/>
+    </head>
+    <body>
+        {% from "view/_macros.html" import menuUI %}   
+
+        {{ menuUI(menu) }}
+    </body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html
+
+<html>
+    <head>
+        <title>Upload Avatar {{username}}</title>
+        <link type="text/css" href="{{url_for('static', filename='css/styles.css')}}" rel="stylesheet"/>
+    </head>
+    <body>
+        {% from "_macros.html" import menuUI %}
+        
+        {{ menuUI(menu) }}
+
+        <ul class="centralmenu">
+            {% for category, message in get_flashed_messages(True) %}
+                <p class="flash_{{ category }}">{{ message }}</p>
+            {% endfor %}
+            <form action="/addavatar/{{username}}" enctype="multipart/form-data" method="post">
+                <li><p><input type="file" name="avatar" value="Change Avatar" required></p></li>
+                <li><p><input type="submit" value="Upload"></p></li>
+            </form>
+        </ul>
+    </body>
+</html>

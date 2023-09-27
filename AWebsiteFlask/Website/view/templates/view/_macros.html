@@ -1,0 +1,22 @@
+{% macro menuUI(menu) %}
+<ul class="mainmenu"> 
+        {% for m in menu %}
+        <li><a href="/view{{ m[2] }}">{{ m[1] }}</a></li>
+        {% endfor %}
+</ul>
+{% endmacro %}
+
+{% macro formErrCheck(form) %}
+        {% for value in form if value.name not in ['csrf_token', 'submit'] %}
+                <li><p>{{ value.label() }} <br> 
+                        {% if value.errors %}
+                                <span>
+                                        {% for e in value.errors %}
+                                                {{ e }}
+                                        {% endfor %}
+                                </span>
+                        {% else %}
+                                {{ value() }}
+                        {% endif %}
+        {% endfor %}
+{% endmacro %}

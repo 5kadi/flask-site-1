@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Unauthorized</title>
+        <link type="text/css" href="{{url_for('static', filename='css/styles.css')}}" rel="stylesheet"/>
+    </head>
+    <body>
+        {% from "_macros.html" import menuUI %}
+        
+        {{ menuUI(menu) }}
+
+        <p class="error_404">Unauthorized
+            <br>Error 401
+        </p>
+    </body>
+</html>

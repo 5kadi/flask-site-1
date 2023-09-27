@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Page Not Found</title>
+        <link type="text/css" href="{{url_for('admin.static', filename='css/styles.css')}}" rel="stylesheet"/>
+    </head>
+    <body>
+        {% from "admin/_macros.html" import menuUI %}
+        
+        {{ menuUI(menu) }}
+
+        <p class="error_404">Page Not Found 
+            <br>Error 404
+        </p>
+    </body>
+</html>

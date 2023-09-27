@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Posts</title>
+        <link type="text/css" href="{{url_for('static', filename='css/styles.css')}}" rel="stylesheet"/>
+    </head>
+    <body>
+        {% from "_macros.html" import menuUI %}
+        
+        {{ menuUI(menu) }}
+        <nav>
+            <ul class="postmenu" style="margin-left: 10vh; margin-right: 10vh;">
+                {% for post in posts %}
+                <a href="/avatar/{{post[0]}}"><img src="/avatar/{{post[0]}}" style="margin-top: 15px; height: 83px; width: 83px; float: left;"></a>
+                <li><a href="/post/{{post[2]}}" style="text-decoration: none;"><p style="margin-left: 100px;">User: {{ post[0] }}
+                <br>{{ post[1] }}</p></a ></li>
+                {% endfor %}
+            </ul>
+        </nav>
+    </body>
+</html>

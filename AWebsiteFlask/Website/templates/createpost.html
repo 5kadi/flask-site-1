@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Create Post {{ username }}</title>
+        <link type="text/css" href="{{url_for('static', filename='css/styles.css')}}" rel="stylesheet"/>
+    </head>
+    <body>
+        {% from "_macros.html" import menuUI %}
+        
+        {{ menuUI(menu) }}
+
+        <ul class="centralmenu">
+            {% for category, message in get_flashed_messages(True) %}
+                <p class="flash_{{ category }}">{{ message }}</p>
+            {% endfor %}
+            <form action="/createpost/{{ username }}" method="post"> 
+                <li><p><label>Create Post:</label><br><input style="height: 15vh;" type="text" name="post_text" value="" required></p></li>
+                <li><p><input type="submit" value="Submit"></p></li>
+            </form>
+        </ul>
+    </body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Post {{post[0]}}</title>
+        <link type="text/css" href="{{url_for('static', filename='css/styles.css')}}" rel="stylesheet"/>
+    </head>
+    <body>
+        {% from "_macros.html" import menuUI %}
+        
+        {{ menuUI(menu) }}
+        <img src="/avatar/{{post[1]}}" style="height: 70vh; width: 70vh; float: left;"></a>
+        <div style="float: left; margin-left: 5vh;">
+            <p style="font-size: 6vh;">Post id: {{ post[0] }}
+            <br>User: {{ post[1] }}</p>
+            <nav class="post_text">
+                <p style="font-size: 30px">{{ post[2] }}</p>
+            </nav>
+        </div>
+    </body>
+</html>
